@@ -1,0 +1,19 @@
+const int ldrPin = A0; // Fotorezistörün bağlı olduğu analog pin (A0)
+const int ledPin = 9; // LED'in bağlı olduğu dijital pin (örnekte 9 numaralı pin)
+
+void setup() {
+  pinMode(ledPin, OUTPUT); // LED pinini çıkış olarak ayarla
+  Serial.begin(9600); // Seri iletişimi başlat
+}
+
+void loop() {
+  int ldrValue = analogRead(ldrPin); // Fotorezistör değerini oku
+  Serial.print("Fotorezistör Değeri: ");
+  Serial.println(ldrValue); // Fotorezistör değerini Serial Monitor'e gönder
+
+  // Fotorezistör değerini 0-1023 aralığından 0-255 aralığına ölçekle
+  int brightness = map(ldrValue, 0, 1023, 0, 255);
+
+  analogWrite(ledPin, brightness); // LED parlaklığını ayarla
+  delay(500); // 500 milisaniye bekle
+}
