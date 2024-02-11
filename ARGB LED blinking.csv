@@ -1,0 +1,5 @@
+﻿Ad,Miktar,Bileşen
+"D1",1," LED RGB"
+"U1",1," Arduino Uno R3"
+"R2, R3, R4",3,"220 Ω Rezistör"
+"Rpot1",1,"250 kΩ Potansiyometre"
